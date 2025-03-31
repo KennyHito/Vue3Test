@@ -24,10 +24,11 @@
 			function changeInfo(){
 				// name.value = '李四'
 				// age.value = 48
-				console.log(job.value)
+				// console.log(name,age)
+			
 				// job.value.type = 'UI设计师'
 				// job.value.salary = '60K'
-				// console.log(name,age)
+				console.log(job.value)
 			}
 
 			//返回一个对象（常用）
