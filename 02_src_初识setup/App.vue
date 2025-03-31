@@ -39,7 +39,7 @@
 			}
 		},
 		//此处只是测试一下setup，暂时不考虑响应式的问题。
-		async setup(){
+		setup(){
 			//数据
 			let name = '张三'
 			let age = 18
