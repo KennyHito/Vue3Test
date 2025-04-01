@@ -21,6 +21,7 @@
 		</div>
 
 		<hr />
+
 		<div class="div_box">
 
 		</div>
@@ -68,6 +69,7 @@ export default {
 			}
 		})
 
+		// 切记一点要return出去
 		return {
 			xLanguage,
 			xMaths,
