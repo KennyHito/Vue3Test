@@ -4,7 +4,7 @@ module.exports = {
     index: {
       //在这里每次更改入口路劲地址即可切换
       // entry: './src/main.js',
-      entry: './04_src_reactive函数/main.js',
+      entry: './自我练习/main.js',
     },
   },
 }
