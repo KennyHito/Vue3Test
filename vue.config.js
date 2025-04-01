@@ -3,8 +3,8 @@ module.exports = {
 	pages: {
     index: {
       //在这里每次更改入口路劲地址即可切换
-      entry: './src/main.js',
-      // entry: './21_src_Suspense/main.js',
+      // entry: './src/main.js',
+      entry: './04_src_reactive函数/main.js',
     },
   },
 }
