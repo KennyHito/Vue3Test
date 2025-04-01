@@ -43,12 +43,13 @@ export default {
 			firstName: '张',
 			lastName: '三',
 		})
+
 		function changeEnglishScore() {
 			xEnglish.value = 100; // 使用ref修改的时候，需要使用value
 		}
 
 		function changeUserName() {
-			person.firstName = '李';
+			person.firstName = '李'; // 使用reactive修改的时候，不需要使用value
 			person.lastName = '四';
 		}
 
