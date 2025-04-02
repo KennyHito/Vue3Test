@@ -23,14 +23,16 @@
 		<hr />
 
 		<div class="div_box">
-
+			<h4>3、学习vue3的监听属性</h4>
+			<div>{{address.province}}{{ address.city }}{{ address.street }}</div>
+			<button @click="address.street+='~'">修改地址</button>
 		</div>
 
 	</div>
 </template>
 
 <script>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 
 export default {
 	name: 'App',
@@ -42,6 +44,12 @@ export default {
 		let person = reactive({ // 切记要引用reactive
 			firstName: '张',
 			lastName: '三',
+		})
+
+		let address = reactive({
+			province: '北京市',
+			city: '海淀区',
+			street: '西二旗'
 		})
 
 		function changeEnglishScore() {
@@ -70,6 +78,10 @@ export default {
 			}
 		})
 
+		watch(address, (newValue, oldValue) => {
+			console.log('⚠️测试打印的内容:--->', newValue, oldValue);
+		},{immediate:true})
+
 		// 切记一点要return出去
 		return {
 			xLanguage,
@@ -77,7 +89,8 @@ export default {
 			xEnglish,
 			changeUserName,
 			changeEnglishScore,
-			person
+			person,
+			address
 		}
 	}
 }
