@@ -24,8 +24,14 @@
 
 		<div class="div_box">
 			<h4>3、学习vue3的监听属性</h4>
-			<div>{{address.province}}{{ address.city }}{{ address.street }}</div>
-			<button @click="address.street+='~'">修改地址</button>
+			<ul>
+				<li>province: {{address.province}}</li>
+				<li>city: {{address.city}}</li>
+				<li>street: {{address.street}}</li>
+				<li>c: {{address.a.b.c}}</li>
+			</ul>
+			<button @click="address.street+='~'">修改street的值</button>
+			<button @click="address.a.b.c+='。'">修改c的值</button>
 		</div>
 
 	</div>
@@ -49,7 +55,12 @@ export default {
 		let address = reactive({
 			province: '北京市',
 			city: '海淀区',
-			street: '西二旗'
+			street: '西二旗',
+			a:{
+				b:{
+					c:100
+				}
+			}
 		})
 
 		function changeEnglishScore() {
@@ -78,9 +89,13 @@ export default {
 			}
 		})
 
-		watch(address, (newValue, oldValue) => {
+		// watch(address, (newValue, oldValue) => {
+		// 	console.log('⚠️测试打印的内容:--->', newValue, oldValue);
+		// },{immediate:true})
+
+		watch(()=>address.a, (newValue, oldValue) => {
 			console.log('⚠️测试打印的内容:--->', newValue, oldValue);
-		},{immediate:true})
+		},{deep:true})
 
 		// 切记一点要return出去
 		return {
