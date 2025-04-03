@@ -30,7 +30,8 @@
 			-->
 			<h4>3、学习vue3的监听属性</h4>
 			<ul>
-				<li>province: {{ address.province }}</li>
+				<li><a href="https://www.baidu.com/s?wd=北京市" target="_blank">province: {{
+					address.province }}</a></li>
 				<li>city: {{ address.city }}</li>
 				<li>street: {{ address.street }}</li>
 				<li>c: {{ address.a.b.c }}</li>
@@ -132,5 +133,8 @@ export default {
 		flex-direction: column;
 	}
 
+	li {
+		border-bottom: 2px solid red;
+	}
 }
 </style>
