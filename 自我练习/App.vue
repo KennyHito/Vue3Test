@@ -23,15 +23,20 @@
 		<hr />
 
 		<div class="div_box">
+			<!-- 
+			监视reactive所定义的一个响应式数据的全部属性
+					1.注意：此处无法正确的获取oldValue
+					2.注意：强制开启了深度监视（deep配置无效）
+			-->
 			<h4>3、学习vue3的监听属性</h4>
 			<ul>
-				<li>province: {{address.province}}</li>
-				<li>city: {{address.city}}</li>
-				<li>street: {{address.street}}</li>
-				<li>c: {{address.a.b.c}}</li>
+				<li>province: {{ address.province }}</li>
+				<li>city: {{ address.city }}</li>
+				<li>street: {{ address.street }}</li>
+				<li>c: {{ address.a.b.c }}</li>
 			</ul>
-			<button @click="address.street+='~'">修改street的值</button>
-			<button @click="address.a.b.c+='。'">修改c的值</button>
+			<button @click="address.street += '~'">修改street的值</button>
+			<button @click="address.a.b.c += '。'">修改c的值</button>
 		</div>
 
 	</div>
@@ -56,9 +61,9 @@ export default {
 			province: '北京市',
 			city: '海淀区',
 			street: '西二旗',
-			a:{
-				b:{
-					c:100
+			a: {
+				b: {
+					c: 100
 				}
 			}
 		})
@@ -93,9 +98,9 @@ export default {
 		// 	console.log('⚠️测试打印的内容:--->', newValue, oldValue);
 		// },{immediate:true})
 
-		watch(()=>address.a, (newValue, oldValue) => {
+		watch(() => address.a, (newValue, oldValue) => {
 			console.log('⚠️测试打印的内容:--->', newValue, oldValue);
-		},{deep:true})
+		}, { deep: true })
 
 		// 切记一点要return出去
 		return {
