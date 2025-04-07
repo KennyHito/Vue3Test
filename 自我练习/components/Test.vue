@@ -37,8 +37,8 @@
 				<li v-if="isShow">c: {{ address.a.b.c }}</li>
 			</ul>
 			<button @click="address.street += '~'">修改street的值</button>
-			<button @click="address.a.b.c += '。'">修改c的值</button>
 			<button @click="isShow = !isShow">显示/隐藏c的内容</button>
+			<button @click="address.a.b.c += '。'">修改c的值</button>
 		</div>
 
 	</div>
