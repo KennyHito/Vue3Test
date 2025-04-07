@@ -10,11 +10,12 @@ export default function (){
 	function savePoint(event){
 		point.x = event.pageX
 		point.y = event.pageY
-		console.log(event.pageX,event.pageY)
+		// console.log(event.pageX,event.pageY)
 	}
 
 	//实现鼠标“打点”相关的生命周期钩子
 	onMounted(()=>{
+		console.log('⚠️测试打印的内容:--->', 'userPoint.js');
 		window.addEventListener('click',savePoint)
 	})
 
