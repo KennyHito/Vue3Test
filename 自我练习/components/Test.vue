@@ -41,11 +41,21 @@
 			<button @click="address.a.b.c += '。'">修改c的值</button>
 		</div>
 
+		<hr />
+
+		<div class="div_box">
+			<h4>4、学习vue3的hook函数(其实就是封装功能供大家直接使用)</h4>
+			<span>当前点击时鼠标的坐标为：x：{{ point.x }}，y：{{ point.y }}</span>
+		</div>
+
+		<hr />
+
 	</div>
 </template>
 
 <script>
 import { ref, reactive, computed, watch } from 'vue'
+import usePoint from '../hooks/usePoint'
 
 export default {
 	name: 'Test',
@@ -70,6 +80,8 @@ export default {
 				}
 			}
 		})
+
+		let point = usePoint();
 
 		function changeEnglishScore() {
 			xEnglish.value = 100; // 使用ref修改的时候，需要使用value
@@ -114,7 +126,8 @@ export default {
 			changeUserName,
 			changeEnglishScore,
 			person,
-			address
+			address,
+			point
 		}
 	},
 	beforeCreate() {
