@@ -50,6 +50,13 @@
 
 		<hr />
 
+		<div class="div_box">
+			<h4>5、var、let和const</h4>
+			<span>①、var：由于 var 存在函数作用域和变量提升，在现代 JavaScript 开发中使用较少。不过，在一些旧代码或者需要兼容旧环境的场景中可能会用到。</span>
+			<span>②、let：适用于需要在块级作用域中声明变量，并且可能会重新赋值的情况，例如在 for 循环中。</span>
+			<span>③、const：适用于声明常量，一旦赋值就不希望被修改的情况。推荐在声明变量时优先考虑使用 const，只有当需要重新赋值时才使用 let。</span>
+		</div>
+
 	</div>
 </template>
 
@@ -60,16 +67,14 @@ import usePoint from '../hooks/usePoint'
 export default {
 	name: 'Test',
 	setup() {
-		var isShow = ref(false);
+		let isShow = ref(false);
 		let xLanguage = ref(99); // 切记要引用ref
 		let xMaths = ref(120);
 		let xEnglish = ref(38);
-
 		let person = reactive({ // 切记要引用reactive
 			firstName: '张',
 			lastName: '三',
 		})
-
 		let address = reactive({
 			province: '北京市',
 			city: '海淀区',
@@ -80,7 +85,6 @@ export default {
 				}
 			}
 		})
-
 		let point = usePoint();
 
 		function changeEnglishScore() {
@@ -116,6 +120,11 @@ export default {
 		watch(() => address.a, (newValue, oldValue) => {
 			console.log('⚠️测试打印的内容:--->', newValue, oldValue);
 		}, { deep: true })
+
+		let xxx = 100;
+		console.log('xxx:', xxx);
+		xxx = 200;//如果使用const声明xxx,则会报错
+		console.log('xxx:', xxx);
 
 		// 切记一点要return出去
 		return {
