@@ -1,5 +1,6 @@
 <template>
 	<div class="app">
+		<div>{{ abc }}</div>
 		<div class="div_box">
 			<h4>1、学习vue3的ref和reactive</h4>
 			<span>我叫:{{ person.firstName }}{{ person.lastName }}</span>
@@ -72,6 +73,7 @@ import usePoint from '../hooks/usePoint'
 
 export default {
 	name: 'Test',
+	props: ['abc'],
 	setup() {
 		let isShow = ref(false);
 		let xLanguage = ref(99); // 切记要引用ref
