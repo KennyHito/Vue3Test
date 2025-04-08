@@ -438,7 +438,7 @@ npm run dev
 
 ## 5.provide 与 inject
 
-<img src="https://v3.cn.vuejs.org/images/components_provide.png" style="width:300px" />
+<img src="https://github.com/KennyHito/Vue3Test/blob/main/18_src_provide%E4%B8%8Einject/assets/1.png" style="width:300px" />
 
 - 作用：实现<strong style="color:#DD5145">祖与后代组件间</strong>通信
 
