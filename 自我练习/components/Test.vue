@@ -1,6 +1,5 @@
 <template>
 	<div class="app">
-		<div>{{ abc }}</div>
 		<div class="div_box">
 			<h4>1、学习vue3的ref和reactive</h4>
 			<span>我叫:{{ person.firstName }}{{ person.lastName }}</span>
@@ -61,7 +60,8 @@
 		<hr />
 
 		<div class="div_box">
-
+			<h4>5、父组件给子组件传值</h4>
+			<div>{{ abc }}</div>
 		</div>
 
 	</div>
