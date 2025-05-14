@@ -46,7 +46,7 @@ export default {
 
 <style lang="less" scoped>
 .app-box {
-  background-color: rgb(251, 205, 121);
+  background-color: skyblue;
   border-radius: 10px;
   padding: 10px;
 
